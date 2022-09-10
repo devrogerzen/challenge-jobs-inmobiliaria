@@ -1,0 +1,9 @@
+{
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "firestore": {
+    "rules": "back-inmsa-inmuebles",
+    "indexes": "firestore.indexes.json"
+  }
+}

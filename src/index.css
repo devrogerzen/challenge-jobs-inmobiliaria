@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*LISTADO*/
+.divclass {
+  background-color: #282c34;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  user-select: none;
+}
+
+
+.cardclass {
+  background-color: #282c34;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  border: solid #fff 30px;
+  padding: 20px;
+}
+
+.imgclass {
+  width: 300px;
+}
+
+.tituloclass {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+/* LINKS */
+.linksclass {
+  background-color: aqua;
+  list-style: none;
+  color: #000;
+  text-decoration: none;
+  border: #11181f solid 10px;
+  user-select: none;
+  padding: 10px;
+}
+
+
+/*CONTACTO*/
+
+.contact-container {
+  background-color: #11181f;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: #fff;
+}
+
+.container-form {
+  margin-top: 20vh;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input {
+  width: 200px;
+  margin-bottom: 30px;
+  cursor: text;
+}
+
+.form-textarea {
+  width: 250px;
+  margin-bottom: 30px;
+  cursor: text;
+}
+
+.form-botton-send {
+  padding: 10px;
+  cursor: pointer;
+}
