@@ -2,7 +2,6 @@ import logo from "../logo.svg";
 import { NavLink, useNavigate } from 'react-router-dom';
 /* import axios from "axios"; */
 import swAlert from "sweetalert";
-import "../index.css"
 
 export const InicioLogin = () => {
   const navigator = useNavigate();
@@ -53,7 +52,7 @@ export const InicioLogin = () => {
       {/* {token && <Navigate replace to="/listado" />} */}
 
       <header className="App-header">
-      <NavLink className="contacto" to="/contacto" >Contacto</NavLink>
+      <NavLink className="linksclass" to="/contacto" >Contacto</NavLink>
         <h3>Lista de Propiedades INMSA</h3>
         <img src={logo} className="App-logo" alt="logo" />
         <p>Logueate para Visualizar Viviendas</p>

@@ -47,7 +47,7 @@ export const ContactUs = () => {
 
   return (
     <div className="contact-container">
-    
+
     <motion.form className="container-form" ref={form} onSubmit={sendEmail}
     initial={{ opacity: 0 }}
     animate={{opacity: 1}}
