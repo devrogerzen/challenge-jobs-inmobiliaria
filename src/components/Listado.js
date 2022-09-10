@@ -8,48 +8,7 @@ import { app } from '../database/FirebaseConexion'
 
 export const Listado = () => {
 
- /*  const [archivoUrl, setArchivoUrl] = useState("")
-  const [docus, setDocus] = useState([])
 
-
-
-  const archivoHandler =  async(e) => {
-    const archivo = e.target.files[0]
-    console.log(archivo)
-    const storageRef = app.storage().ref()
-    const archivoPath = storageRef.child(archivo.name)
-    await archivoPath.put("archivo cargado :", archivo)
-
-
-    const enlaceUrl = await archivoPath.getDownloadURL()
-    console.log(enlaceUrl)
-    setArchivoUrl(enlaceUrl)
-  }
-
-  const submitHandler = async (e) => {
-    e.preventDefault()
-    const bienes = "bienes"
-    const nombreArchivo = e.target.nombre.value
-    if(!nombreArchivo) {
-      swAlert("Coloca un nombre")
-      return
-    }
-    const coleccionRef = app.firestore().collection("archivos")
-    const docu = await coleccionRef.doc(bienes).set({nombre: nombreArchivo, url: archivoUrl})
-    console.log("archivo cargado: ", nombreArchivo, "url:", archivoUrl)
-    window.location="/"
-  }
-
-  const funDocus = async () => {
-    const docusList = await app.firestore().collection("archivos").get()
-    setDocus(docusList.docs.map((doc) => doc.data()))
-    console.log(docusList)
-  }
-  useEffect (() =>{
-   funDocus()
-    
-  },[])
- */
 
   const [archivoUrl, setArchivoUrl] = useState("");
   const [docus,setDocus] = useState([]);

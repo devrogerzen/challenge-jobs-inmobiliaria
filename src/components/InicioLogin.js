@@ -1,7 +1,8 @@
 import logo from "../logo.svg";
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
-import axios from "axios";
+import { NavLink, useNavigate } from 'react-router-dom';
+/* import axios from "axios"; */
 import swAlert from "sweetalert";
+import "../index.css"
 
 export const InicioLogin = () => {
   const navigator = useNavigate();
@@ -12,7 +13,7 @@ export const InicioLogin = () => {
     const password = e.target.password.value;
     const regexEmail =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    console.log(regexEmail.test(email))
+    /* console.log(regexEmail.test(email)) */
     if (email === "" || password === "") {
       swAlert("los campos no pueden estar vacios");
       return;
@@ -21,13 +22,15 @@ export const InicioLogin = () => {
       swAlert("Debes escribir una dirección de correo valida");
       return;
     }
-    if (email !== "challenge@alkemy.org" || password !== "react") {
+
+    if (email !== "challenge@inmsa.com" || password !== "1234") { 
       swAlert("creadenciales invalidas");
       return;
     }
 
+    navigator("/listado");
 
-      axios
+      /* axios
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         swAlert("Perfecto, ingresaste correctamente");
@@ -36,21 +39,21 @@ export const InicioLogin = () => {
 
         sessionStorage.setItem("token", tokenRecibido);
         navigator(<Navigate replace to="/listado" />);
-      });
+      }); */
 
   };
 
 
 
   
-  let token = sessionStorage.getItem("token");
+  /* let token = sessionStorage.getItem("token"); */
 
   return (
     <div className="App">
-      {token && <Navigate replace to="/listado" />}
+      {/* {token && <Navigate replace to="/listado" />} */}
 
       <header className="App-header">
-      <NavLink className="contacto" to="/" >Contacto</NavLink>
+      <NavLink className="contacto" to="/contacto" >Contacto</NavLink>
         <h3>Lista de Propiedades INMSA</h3>
         <img src={logo} className="App-logo" alt="logo" />
         <p>Logueate para Visualizar Viviendas</p>
