@@ -1,5 +1,5 @@
 import logo from "../logo.svg";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import swAlert from "sweetalert";
 
@@ -26,7 +26,8 @@ export const InicioLogin = () => {
       return;
     }
 
-    axios
+
+      axios
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         swAlert("Perfecto, ingresaste correctamente");
@@ -36,8 +37,12 @@ export const InicioLogin = () => {
         sessionStorage.setItem("token", tokenRecibido);
         navigator(<Navigate replace to="/listado" />);
       });
+
   };
 
+
+
+  
   let token = sessionStorage.getItem("token");
 
   return (
@@ -45,6 +50,7 @@ export const InicioLogin = () => {
       {token && <Navigate replace to="/listado" />}
 
       <header className="App-header">
+      <NavLink className="contacto" to="/" >Contacto</NavLink>
         <h3>Lista de Propiedades INMSA</h3>
         <img src={logo} className="App-logo" alt="logo" />
         <p>Logueate para Visualizar Viviendas</p>
