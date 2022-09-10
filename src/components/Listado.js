@@ -7,8 +7,8 @@ import { app } from '../database/FirebaseConexion'
 
 
 export const Listado = () => {
-const navigator = useNavigate()
 
+const navigator = useNavigate()
 
   const [archivoUrl, setArchivoUrl] = useState("");
   const [docus,setDocus] = useState([]);
@@ -36,8 +36,7 @@ const coleccionRef =  app.firestore().collection("archivos");
 const docu = await coleccionRef.doc(nombreArchivo).set({nombre: nombreArchivo, url: archivoUrl});
 console.log(docu)
 console.log("archivo cargado:", nombreArchivo, "ulr:", archivoUrl);
-navigator("/listado")
-
+navigator("/");
   }
 
   const funDocus = async () => {
@@ -46,8 +45,7 @@ navigator("/listado")
     console.log(docusList)
   }
   useEffect (() =>{
-   funDocus()
-    
+  funDocus()
   },[])
 
 
