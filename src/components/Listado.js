@@ -75,6 +75,7 @@ if (!nombreArchivo) {
 }
 const coleccionRef =  app.firestore().collection("archivos");
 const docu = await coleccionRef.doc(nombreArchivo).set({nombre: nombreArchivo, url: archivoUrl});
+console.log(docu)
 console.log("archivo cargado:", nombreArchivo, "ulr:", archivoUrl);
 window.location="/"
 
