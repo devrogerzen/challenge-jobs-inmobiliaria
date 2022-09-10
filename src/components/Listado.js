@@ -1,13 +1,13 @@
 /* import React, { useEffect, useState } from 'react' */
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import swAlert from 'sweetalert'
 import { app } from '../database/FirebaseConexion'
 
 
 
 export const Listado = () => {
-
+const navigator = useNavigate()
 
 
   const [archivoUrl, setArchivoUrl] = useState("");
@@ -36,7 +36,7 @@ const coleccionRef =  app.firestore().collection("archivos");
 const docu = await coleccionRef.doc(nombreArchivo).set({nombre: nombreArchivo, url: archivoUrl});
 console.log(docu)
 console.log("archivo cargado:", nombreArchivo, "ulr:", archivoUrl);
-
+navigator("/listado")
 
   }
 
