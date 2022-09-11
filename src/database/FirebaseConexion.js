@@ -1,5 +1,6 @@
 import "firebase/compat/storage"
 import "firebase/compat/firestore"
+import "firebase/compat/auth"
 
 import firebase from 'firebase/compat/app'
 
@@ -14,3 +15,4 @@ export const app = firebase.initializeApp({
   "authDomain": "challenge-inmsa.firebaseapp.com",
   "messagingSenderId": "917316598226"
 });
+

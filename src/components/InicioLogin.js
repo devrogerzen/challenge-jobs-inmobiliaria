@@ -1,11 +1,13 @@
 import logo from "../logo.svg";
-import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+import { /* Navigate, */ NavLink, useNavigate } from 'react-router-dom';
 import swAlert from "sweetalert";
-import axios from "axios";
+/* import axios from "axios"; */
+/* import { app } from "../database/FirebaseConexion"; */
 
 export const InicioLogin = () => {
-  const navigator = useNavigate();
 
+
+const navigator = useNavigate()
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -23,14 +25,29 @@ export const InicioLogin = () => {
       return;
     }
 
-    if (email !== "challenge@alkemy.org" || password !== "react") { 
+    if (email !== "challenge@inmsa.com" || password !== "123456") { 
       swAlert("creadenciales invalidas");
       return;
     }
+
+    navigator("/listado")
+    
+    
+/*     function loginUser(email, password) {
+      console.log('Loging user ' + email);
+    
+      app.firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function (user) {
+        console.log('Credenciales correctas, ¡bienvenido!');
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+    loginUser() */
     
 
-
-      axios.post("https://challenge-react.alkemy.org", { email, password })
+    /*   axios.post("https://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         swAlert("Perfecto, ingresaste correctamente");
         console.log(res.data);
@@ -41,15 +58,15 @@ export const InicioLogin = () => {
       })
       .catch(error => {
         console.log(error.response)
-      })
+      }) */
 
   };
 
-   let token = sessionStorage.getItem("token"); 
+  /*  let token = sessionStorage.getItem("token");  */
 
   return (
     <div className="App">
-      {token && <Navigate replace to="/listado" />} 
+      {/* {token && <Navigate replace to="/listado" />} */} 
 
       <header className="App-header">
       <NavLink className="linksclass" to="/contacto" >Contacto</NavLink>

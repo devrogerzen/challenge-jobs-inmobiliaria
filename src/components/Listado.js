@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Navigate, NavLink, useNavigate } from 'react-router-dom'
+import {  NavLink, useNavigate } from 'react-router-dom'
 import swAlert from 'sweetalert'
 import { app } from '../database/FirebaseConexion'
 
 
 
 export const Listado = () => {
-  let token = sessionStorage.getItem("token");
+  
 const navigator = useNavigate()
 
   const [archivoUrl, setArchivoUrl] = useState("");
@@ -49,9 +49,17 @@ navigator("/")
   },[])
 
 
+const seleccion = (e) => {
+e.preventDefault()
+
+console.log(e.target)
+
+}
+
+
   return (
     <>
-    {!token && <Navigate replace to='/' /> }
+    
     <div className='divclass' >
       <NavLink className="linksclass" to="/contacto" >Contacto</NavLink>
 
@@ -68,7 +76,7 @@ navigator("/")
 
         docus.map((doc, idx) => {
           return (
-            <div key={idx} className='cardclass'>
+            <div key={idx} className='cardclass' onClick={seleccion} >
               <img className='imgclass' src={doc.url} alt="imagenes casa " />
               <h5 className='tituloclass' >{doc.nombre}</h5>
             </div>
