@@ -29,8 +29,7 @@ export const InicioLogin = () => {
     }
     
 
-      axios
-      .post("http://challenge-react.alkemy.org", { email, password })
+      axios.post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         swAlert("Perfecto, ingresaste correctamente");
         console.log(res.data);
