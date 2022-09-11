@@ -37,7 +37,10 @@ export const InicioLogin = () => {
 
         sessionStorage.setItem("token", tokenRecibido);
         navigator(<Navigate replace to="/listado" />);
-      });
+      })
+      .catch(error => {
+        console.log(error.response)
+      })
 
   };
 
