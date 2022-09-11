@@ -1,13 +1,12 @@
-/* import React, { useEffect, useState } from 'react' */
 import { useEffect, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Navigate, NavLink, useNavigate } from 'react-router-dom'
 import swAlert from 'sweetalert'
 import { app } from '../database/FirebaseConexion'
 
 
 
 export const Listado = () => {
-
+  let token = sessionStorage.getItem("token");
 const navigator = useNavigate()
 
   const [archivoUrl, setArchivoUrl] = useState("");
@@ -36,7 +35,7 @@ const coleccionRef =  app.firestore().collection("archivos");
 const docu = await coleccionRef.doc(nombreArchivo).set({nombre: nombreArchivo, url: archivoUrl});
 console.log(docu)
 console.log("archivo cargado:", nombreArchivo, "ulr:", archivoUrl);
-navigator("/");
+navigator("/")
   }
 
   const funDocus = async () => {
@@ -46,10 +45,13 @@ navigator("/");
   }
   useEffect (() =>{
   funDocus()
+
   },[])
 
 
   return (
+    <>
+    {!token && <Navigate replace to='/' /> }
     <div className='divclass' >
       <NavLink className="linksclass" to="/contacto" >Contacto</NavLink>
 
@@ -60,7 +62,7 @@ navigator("/");
 
     </form>
 
-
+      <div className='cardcontainer'>
       {
 
 
@@ -68,12 +70,14 @@ navigator("/");
           return (
             <div key={idx} className='cardclass'>
               <img className='imgclass' src={doc.url} alt="imagenes casa " />
-              <h3 className='tituloclass' >{doc.nombre}</h3>
+              <h5 className='tituloclass' >{doc.nombre}</h5>
             </div>
           )
         })
       }
+      </div>
     </div>
+    </>
   )
 }
 

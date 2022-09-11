@@ -1,10 +1,11 @@
 import logo from "../logo.svg";
-import { NavLink, useNavigate } from 'react-router-dom';
-/* import axios from "axios"; */
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
 import swAlert from "sweetalert";
+import axios from "axios";
 
 export const InicioLogin = () => {
   const navigator = useNavigate();
+
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -12,7 +13,7 @@ export const InicioLogin = () => {
     const password = e.target.password.value;
     const regexEmail =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    /* console.log(regexEmail.test(email)) */
+    console.log(regexEmail.test(email))
     if (email === "" || password === "") {
       swAlert("los campos no pueden estar vacios");
       return;
@@ -22,14 +23,13 @@ export const InicioLogin = () => {
       return;
     }
 
-    if (email !== "challenge@inmsa.com" || password !== "1234") { 
+    if (email !== "challenge@alkemy.org" || password !== "react") { 
       swAlert("creadenciales invalidas");
       return;
     }
+    
 
-    navigator("/listado");
-
-      /* axios
+      axios
       .post("http://challenge-react.alkemy.org", { email, password })
       .then((res) => {
         swAlert("Perfecto, ingresaste correctamente");
@@ -38,18 +38,15 @@ export const InicioLogin = () => {
 
         sessionStorage.setItem("token", tokenRecibido);
         navigator(<Navigate replace to="/listado" />);
-      }); */
+      });
 
   };
 
-
-
-  
-  /* let token = sessionStorage.getItem("token"); */
+   let token = sessionStorage.getItem("token"); 
 
   return (
     <div className="App">
-      {/* {token && <Navigate replace to="/listado" />} */}
+      {token && <Navigate replace to="/listado" />} 
 
       <header className="App-header">
       <NavLink className="linksclass" to="/contacto" >Contacto</NavLink>
