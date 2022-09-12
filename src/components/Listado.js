@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {  NavLink, useNavigate } from 'react-router-dom'
+import {  Link, NavLink, useNavigate } from 'react-router-dom'
 import swAlert from 'sweetalert'
 import { app } from '../database/FirebaseConexion'
 
@@ -48,13 +48,14 @@ navigator("/")
 
   },[])
 
+const traer = (e) => {
 
-const seleccion = (e) => {
-e.preventDefault()
+const getdata = e.document.getElementById("traerdescr").target
+console.log(getdata)
 
-console.log(e.target)
 
 }
+
 
 
   return (
@@ -76,9 +77,13 @@ console.log(e.target)
 
         docus.map((doc, idx) => {
           return (
-            <div key={idx} className='cardclass' onClick={seleccion} >
+            <div key={idx} className='cardclass'  id='traerdescr' >
               <img className='imgclass' src={doc.url} alt="imagenes casa " />
               <h5 className='tituloclass' >{doc.nombre}</h5>
+              <Link to="/descripcion" className="btnclassdetalle" 
+              onClick={traer} >
+                Ver Detalle
+              </Link>
             </div>
           )
         })
