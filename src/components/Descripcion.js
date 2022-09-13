@@ -12,7 +12,7 @@ export const Descripcion = () => {
       <NavLink className="linksclass" to="/listado">
         Ir Atras
       </NavLink>
-        <img src={data.url} alt="imagenes casa " />
+        <img className="descripimagen" src={data.url} alt="imagenes casa " />
         <h2>Descripcion: {data.nombre}</h2>
         <h2>Precio: {data.precio}$</h2>
       </div>

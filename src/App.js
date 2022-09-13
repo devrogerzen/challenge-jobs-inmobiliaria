@@ -1,4 +1,3 @@
-import "./App.css";
 
 import { RouterMain } from "./routes/RouterMain";
 

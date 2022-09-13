@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import swAlert from "sweetalert";
-import LogoInmsa from "../images/logoinmsa.jpg"
+import LogoInmsa from "../images/logoinmsa.jpg";
 
 export const InicioLogin = () => {
   const navigator = useNavigate();
@@ -31,25 +31,30 @@ export const InicioLogin = () => {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <NavLink className="linksclass" to="/contacto">
-          Contacto
-        </NavLink>
-        <h3>Logueate para Visualizar Viviendas</h3>
-        <img src={LogoInmsa} className="App-logo" alt="logo" />
-
-        <form onSubmit={submitHandler}>
-          <input type="email" name="email" placeholder="Escribe Email" />
-          <br />
-          <input
-            type="password"
-            name="password"
-            placeholder="Escribe Contraseña"
-          />
-          <br />
-          <button type="submit">Ingresar</button>
-        </form>
-      </header>
+      <NavLink className="linksclass" to="/contacto">
+        Contacto
+      </NavLink>
+      <img src={LogoInmsa} className="App-logo" alt="logo" />
+      <h4 className="logintitulo">Login</h4>
+      <form onSubmit={submitHandler}>
+        <input
+          type="email"
+          name="email"
+          placeholder="Escribe Email"
+          className="inputclass"
+        />
+        <br />
+        <input
+          type="password"
+          name="password"
+          placeholder="Escribe Contraseña"
+          className="inputclass"
+        />
+        <br />
+        <button className="btnlogin" type="submit">
+          Ingresar
+        </button>
+      </form>
     </div>
   );
 };
