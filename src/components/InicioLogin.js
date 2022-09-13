@@ -2,10 +2,11 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import swAlert from "sweetalert";
 import LogoInmsa from "../images/logoinmsa.jpg";
+import { useState } from "react";
 
 export const InicioLogin = () => {
   const navigator = useNavigate();
-
+  const [token, setToken] = useState(false);
   const submitHandler = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -27,7 +28,7 @@ export const InicioLogin = () => {
       return;
     }
 
-    navigator("/listado");
+    token && navigator("/listado");
   };
 
   return (
@@ -58,7 +59,7 @@ export const InicioLogin = () => {
           className="inputclass"
         />
         <br />
-        <button className="btnlogin" type="submit">
+        <button className="btnlogin" type="submit" onClick={() => setToken(true)}>
           Ingresar
         </button>
       </form>

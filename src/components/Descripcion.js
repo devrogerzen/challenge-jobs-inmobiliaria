@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export const Descripcion = () => {
   const { state } = useLocation() || {};
   const { data } = state || {};
-  console.log(data);
 
   return (
     <motion.div

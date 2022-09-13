@@ -41,8 +41,6 @@ export const ContactUs = () => {
       email: e.target.user_email.value,
       message: e.target.message.value,
     };
-
-    console.log(usuarioform);
   };
 
   return (
