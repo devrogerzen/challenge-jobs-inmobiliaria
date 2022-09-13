@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { InicioLogin } from "../components/InicioLogin";
 import { Listado } from "../components/Listado";
 import { ContactUs } from "../components/ContactUs";
-import { Descripcion } from "../components/Descripcion"
+import { Descripcion } from "../components/Descripcion";
 
 export const RouterMain = () => {
   return (

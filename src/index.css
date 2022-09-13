@@ -1,17 +1,19 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
 /*LISTADO*/
+
 .divclass {
   background-color: #282c34;
   min-height: 100vh;
@@ -21,24 +23,23 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  
-
 }
+
 .cardcontainer {
-display: flex;
-flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
-
 
 .cardclass {
   background-color: #282c34;
   width: 180px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(3px + 2vmin);
   color: white;
   border: solid #fff 5px;
   padding: 10px;
@@ -49,12 +50,15 @@ flex-wrap: wrap;
 
 .imgclass {
   width: 100%;
+  height: 150px;
 }
 
 .tituloclass {
   margin: 0;
   padding: 0;
-  width: 90%;
+  width: 100%;
+  height: 140px;
+  
 }
 
 .btnclassdetalle {
@@ -69,9 +73,8 @@ flex-wrap: wrap;
   margin-top: 5px;
 }
 
-
-
 /* LINKS */
+
 .linksclass {
   background-color: aqua;
   list-style: none;
@@ -81,8 +84,6 @@ flex-wrap: wrap;
   user-select: none;
   padding: 10px;
 }
-
-
 
 /*CONTACTO*/
 
@@ -124,14 +125,17 @@ flex-wrap: wrap;
 /*DESCRIPCION*/
 
 .descripclass {
-background-color: #11181f;
-width: 100%;
-height: 100vh;
-color: #fff;
+  display: flex;
+  flex-direction: column;
+  background-color: #11181f;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
 }
 
 .descripelementos {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
