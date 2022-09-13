@@ -1,4 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import swAlert from "sweetalert";
 import LogoInmsa from "../images/logoinmsa.jpg";
 
@@ -30,7 +31,13 @@ export const InicioLogin = () => {
   };
 
   return (
-    <div className="App">
+    <motion.div
+      className="App"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      viewport={{ once: true }}
+    >
       <NavLink className="linksclass" to="/contacto">
         Contacto
       </NavLink>
@@ -55,6 +62,6 @@ export const InicioLogin = () => {
           Ingresar
         </button>
       </form>
-    </div>
+    </motion.div>
   );
 };

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import { app } from "../database/FirebaseConexion";
 
 export const Listado = () => {
@@ -14,24 +15,33 @@ export const Listado = () => {
   }, [info]);
 
   return (
-    <div className="divclass">
+    <motion.div
+      className="divclass"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+      viewport={{ once: true }}
+    >
       <NavLink className="linksclass" to="/contacto">
         Contacto
       </NavLink>
-
       <div className="cardcontainer">
         {info.map((doc, idx) => {
           return (
-            <div key={idx} className="cardclass" >
+            <div key={idx} className="cardclass">
               <img className="imgclass" src={doc.url} alt="imagenes casa" />
               <h5 className="tituloclass">{doc.nombre}</h5>
-              <Link className="btnclassdetalle" to="/descripcion" state={{ data: doc }}>
+              <Link
+                className="btnclassdetalle"
+                to="/descripcion"
+                state={{ data: doc }}
+              >
                 Ver detalles
               </Link>
             </div>
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
